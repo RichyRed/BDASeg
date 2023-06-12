@@ -1,5 +1,10 @@
 # Proyecto de Adquisición de Medicamentos e Insumos para Procedimientos Quirúrgicos Oftalmológicos a Nivel Nacional del PNFRFSS
 
+La adquisición de medicamentos e insumos para procedimientos quirúrgicos en los servicios especializados de oftalmología a nivel nacional del PNFRFSS (Programa Nacional de Fortalecimiento de la Red de Farmacias y Servicios de Salud) se refiere al proceso mediante el cual se obtienen los medicamentos y suministros necesarios para llevar a cabo intervenciones quirúrgicas oftalmológicas en diferentes centros de salud en todo el país. 
+Este programa tiene como objetivo garantizar el abastecimiento adecuado de medicamentos e insumos, asegurando la calidad y disponibilidad de los mismos para brindar una atención médica de calidad a los pacientes con afecciones oftalmológicas en todo el territorio nacional.
+
+El proyecto incluye el diseño de una base de datos que permita almacenar la información relacionada con los medicamentos, insumos, hospitales, consultorios, cirujanos, pacientes y demás entidades involucradas en el proceso de adquisición y realización de procedimientos quirúrgicos oftalmológicos. Además, se implementarán reglas y restricciones mediante triggers para garantizar la integridad de los datos y asegurar que se cumplan ciertas validaciones y condiciones necesarias.
+
 ## 📊 Diagrama propuesto de Base de Datos
 
 Aquí se muestra el diagrama propuesto de la base de datos para el proyecto.  clara de la estructura de la base de datos.
