@@ -11,6 +11,20 @@ Aquí se muestra el diagrama propuesto de la base de datos para el proyecto.  cl
 
 ![Ultimo](https://github.com/RichyRed/BDASeg/assets/84047015/7217bae6-180b-4998-8034-40cdd1e759da)
 
+## Triggers🐱‍🏍
+* Validar que el precio de un medicamento no sea negativo antes de insertarlo.
+* Evitar la eliminación de un proveedor si tiene medicamentos asociados en la tabla.
+* Evitar la eliminación de un hospital si tiene consultorios asociados.
+* Validar que la fecha de nacimiento de un paciente no sea en el futuro
+* Controlar la cantidad de medicamentos en inventario al realizar una adquisición en la tabla.
+* Evitar que un cirujano pertenezca a más de un hospital
+
+## Stored Procedures 🤖
+* Buscar medicamentos
+* Contar el numero de proveedores
+* Actualizar el precio de algun medicamento 
+* Generar reporte de ventas
+* Calcular el promedio del precio de los medicamentos
 
 ## 🛠️ Requisitos técnicos
 
