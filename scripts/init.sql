@@ -94,7 +94,9 @@ VALUES (4, 'Amoxicilina', 'Antibiotico de amplio espectro', 12.99);
 
 -- Datos para la tabla Persona
 INSERT INTO Persona (IDPersona, Nombre, Apellido, Ciudad, Telefono) 
-VALUES (1, 'Juan', 'Perez', 'Santa', '555-1234');
+VALUES (1, 'Juan', 'Perez', 'Santa', '555-1234'),
+       (2, 'Juan', 'Carlos', 'Cochita', '555-1239'),
+       (3, 'Juan', 'Martinez', 'Sucre', '555-1236');
 
 -- Datos para la tabla Direccion
 INSERT INTO Direccion (IDDireccion, Ciudad, Pais) VALUES
@@ -120,19 +122,26 @@ INSERT INTO AdquisicionMedicamentos (IDAquisicion, IDMedicamento, IDProveedor, C
 
 -- Datos para la tabla Hospital
 INSERT INTO Hospital (IDHospital, Nombre, IDDireccion) VALUES
-(1, 'Hospital General', 1);
+(1, 'Hospital General', 1),
+(2, 'Hospital Infantil', 2),
+(3, 'Hospital Policial', 3);
 
 -- Datos para la tabla Consultorio
 INSERT INTO Consultorio (IDConsultorio, Nombre, Descripcion, IDHospital) VALUES
-(1, 'Consultorio A', 'Consultorio para especialistas', 1);
+(1, 'Consultorio A', 'Consultorio para especialistas', 1),
+(2, 'Consultorio B', 'Consultorio oftalmologia', 1),
+(3, 'Consultorio C', 'Consultorio privado', 1);
 
 -- Datos para la tabla Paciente
 INSERT INTO Paciente (IDPaciente, FechaNacimiento, Historial, IDPersona) VALUES
-(1, '1990-03-15', 'Historial medico del paciente', 1);
+(1, '1990-03-15', 'Historial medico del paciente', 1),
+(2, '1990-03-15', 'Historial medico', 2),
+(3, '1990-03-15', 'Historial medico del paciente', 3);
 
 -- Datos para la tabla Cirujanos
 INSERT INTO Cirujanos (IDCirujano, Especialidad, IDHospital, IDPersona) VALUES
-(1, 'Cirugia General', 1, 1);
+(1, 'Cirugia General', 1, 1),
+(2, 'Cirugia General', 1, 3);
 
 -- Datos para la tabla ProcedimientosQuirurgicos
 INSERT INTO ProcedimientosQuirurgicos (IDProcedimiento, Nombre, Descripcion, IDCirujano) VALUES
@@ -193,14 +202,15 @@ CREATE TABLE AuditoriaConsultorio (
 );
 
 /* INDICES */
--- Índice en la tabla Proveedor
+-- Índice 
 CREATE INDEX idx_Proveedor_IDDireccion ON Proveedor(IDDireccion);
 
--- Índice en la tabla Cirujanos
-CREATE INDEX idx_Cirujanos_IDHospital ON Cirujanos(IDHospital);
-CREATE INDEX idx_Cirujanos_IDPersona ON Cirujanos(IDPersona);
+-- Índice 
+CREATE INDEX idx_Hospital_Hospital ON Hospital (IDHospital);
+CREATE INDEX idx_Consultorio_Hospital ON Consultorio (IDHospital);
+CREATE INDEX idx_Consultorio_IDConsultorio ON Consultorio (IDConsultorio);
 
--- Índice compuesto en la tabla Paciente
+-- Índice 
 CREATE INDEX idx_Paciente_IDPersona_FechaNacimiento ON Paciente(IDPersona, FechaNacimiento);
 
 -- Indice 
@@ -211,7 +221,7 @@ CREATE INDEX idx_Hospital_IDHospital ON Hospital(IDHospital);
 CREATE INDEX idx_Consultorio_IDHospital ON Consultorio(IDHospital);
 CREATE INDEX idx_ProcedimientosQuirurgicos_IDCirujano ON ProcedimientosQuirurgicos(IDCirujano);
 
---Indice 
+-- Indice 
 CREATE INDEX idx_Medicamentos_Precio ON Medicamentos(Precio);
 CREATE INDEX idx_AdquisicionMedicamentos_IDMedicamento_IDProveedor ON AdquisicionMedicamentos(IDMedicamento, IDProveedor);
 CREATE INDEX idx_Proveedor_IDProveedor ON Proveedor(IDProveedor);
